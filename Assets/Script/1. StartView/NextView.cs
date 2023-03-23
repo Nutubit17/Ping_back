@@ -23,4 +23,7 @@ public class NextView : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+
+
 }

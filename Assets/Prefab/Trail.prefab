@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2572736514763960914}
   - component: {fileID: 3871629300801670819}
-  - component: {fileID: 8127541715983352417}
+  - component: {fileID: 398387518}
   m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2572736514763960909}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e92d2e07b1cd5fc46bae2d5e1a8e8998, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcbac1385c4c5e046bf94075801aae45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8127541715983352417
+--- !u!114 &398387518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2572736514763960909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43527d8f71642264f9328247a2f2dcfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3faa1a3f8496f40a7d7eedad4ad2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPoint: {x: -8, y: -5, z: 0}
+  endPoint: {x: 8, y: 5, z: 0}
+  speed: 5
