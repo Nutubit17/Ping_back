@@ -129,10 +129,17 @@ public class Player : MonoBehaviour
             playerMode = mode.stay;
 
         }
-
-
-
-
-
     }
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Note"))
+        {
+            speed_Pri = 0f;
+            directVector_Pri = new Vector3(0, 0, 0);
+
+        }
+    }
+
 }

@@ -46,17 +46,13 @@ public class NoteGenerator : MonoBehaviour
             isNoteStart = false;
         }
 
-        
+
         transform.position += directVector * Time.deltaTime * speed;
+        //this.gameObject.transform.position = Vector3.MoveTowards(transform.position, directVector, Time.deltaTime * speed);
 
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, startPoint.x, endPoint.x), Mathf.Clamp(transform.position.y, startPoint.y, endPoint.y), 0);
 
-
-        if(transform.position.x == startPoint.x || transform.position.x == endPoint.x || transform.position.y ==startPoint.y || transform.position.y == endPoint.y)
-        {
-            directVector = new Vector3(0, 0, 0);
-        }
 
     }
 
@@ -72,6 +68,9 @@ public class NoteGenerator : MonoBehaviour
 
         directVector = new Vector3(point.x - transform.position.x, point.y - transform.position.y, 0).normalized;
 
+
+
+        transform.position += directVector;
 
     }
 
@@ -98,7 +97,14 @@ public class NoteGenerator : MonoBehaviour
 
     }
 
-
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Player"))
+        {
+            speed = 0f;
+            directVector = new Vector3(0, 0, 0);
+        }
+    }
 
 }
 
