@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
             transform.position = Note.transform.position;
             playerMode = mode.stay;
             
-            directVector_Pri = noteScript.directVector;
+            directVector_Pri = new Vector3(noteScript.directVector.x, noteScript.directVector.y, noteScript.directVector.z);
             speed_Pri = noteScript.speed;
 
             noteRenderer.color = new Color(255, 255, 255, 0);
@@ -136,6 +136,7 @@ public class Player : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Note"))
         {
+            
             speed_Pri = 0f;
             directVector_Pri = new Vector3(0, 0, 0);
 

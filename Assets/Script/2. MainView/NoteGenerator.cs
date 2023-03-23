@@ -22,9 +22,9 @@ public class NoteGenerator : MonoBehaviour
     Vector3 endPoint;
 
     [SerializeField]
-     public float speed;
+     public float realSpeed;
 
-
+    public float speed;
 
     bool isNoteStart;
 
@@ -33,6 +33,7 @@ public class NoteGenerator : MonoBehaviour
     {
         renderer_pri = GetComponent<SpriteRenderer>();
         isNoteStart = true;
+        speed = realSpeed;
 
     }
 
@@ -44,6 +45,10 @@ public class NoteGenerator : MonoBehaviour
         {
             NoteStart();
             isNoteStart = false;
+
+            speed = realSpeed;
+
+            transform.position += directVector;
         }
 
 
@@ -66,11 +71,10 @@ public class NoteGenerator : MonoBehaviour
 
         renderer_pri.color = new Color(255, 255, 255, 255);
 
+
         directVector = new Vector3(point.x - transform.position.x, point.y - transform.position.y, 0).normalized;
 
 
-
-        transform.position += directVector;
 
     }
 
@@ -101,6 +105,8 @@ public class NoteGenerator : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player"))
         {
+            
+
             speed = 0f;
             directVector = new Vector3(0, 0, 0);
         }
